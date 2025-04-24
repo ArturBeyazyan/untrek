@@ -1,5 +1,4 @@
 "use client";
-
 export default function Business() {
   return (
     <div className="Home">
@@ -9,7 +8,6 @@ export default function Business() {
       </aside>
       {/* Main Content */}
       <main className="flex-1 p-4">
-        <h1 className="text-2xl font-semibold mb-4">h1</h1>
       </main>
     </div>
     </div>
