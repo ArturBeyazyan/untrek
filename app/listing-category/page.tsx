@@ -1,10 +1,9 @@
 'use client'
 import { useRouter } from 'next/router'
-import { businessdirectoryItem, travelDealsItem } from '@/app/models/selectItems' // change path
-import { use, useMemo } from 'react'
+import { businessdirectoryItem } from '@/app/models/selectItems' // change path
+import {  useMemo } from 'react'
 import { useParams, useSearchParams } from 'next/navigation'
 const Page = () => {
-  
   const params = useParams()
   const path = params?.path // t
   const searchParams = useSearchParams()
@@ -15,9 +14,7 @@ const Page = () => {
     if (path === 'business-directory') {
       return businessdirectoryItem.filter((item) => item.id === id)
     }
-    if (path === 'travel-deals') {
-      return travelDealsItem.filter((item) => item.id === id)
-    }
+    
     return []
   }, [path, id])
   return (
