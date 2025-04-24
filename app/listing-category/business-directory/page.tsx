@@ -3,15 +3,11 @@ import { useRouter } from "next/router";
 import { businessdirectoryItem } from "../../models/selectItems";
  import { useSearchParams } from 'next/navigation';
 export default function Business() {
- 
-
   const router = useSearchParams();
   const id = router.get('id');
-
   const selectedItems = businessdirectoryItem.filter(item => item.id === id)
   return (
     <div className="Home">
-      
       <div className="flex">
       {/* Sidebar */}
       <aside className="w-64 bg-gray-100 p-4">
