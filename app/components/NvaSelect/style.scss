@@ -1,0 +1,76 @@
+.navication_select {
+    background-color: #9073cb;
+    .navication_select-container {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .dropdown-container {
+            .BusinessButton {
+                &:hover {
+                    color: #7c5ac2;
+                    background: #fff;
+                }
+                display: flex;
+                align-items: center;
+                padding: 10px 15px;
+                color: #fff;
+                transition: 0.2s;
+                font-size:16;
+                i{
+                    &:hover{
+                        color: #515365;
+                       
+                    }
+                    font-size: 20px;
+                    color: #fff;
+                }
+            }
+        }
+        .MenuBusiness {
+            max-height: 440px;
+            background: #9073cb;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            position: absolute;
+            border: 1px solid #e6ecf5;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            width: 170px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-color:#aaafce #9073cb;
+            a {
+                font-size: 13px;
+            }
+            .BusinessItem {
+                color: #fff;
+                padding: 15px;
+                color: #fff;
+                text-align: left;
+                border-bottom: 1px solid rgba(255, 255, 255, .3);
+                &:hover {
+                    color: #7c5ac2;
+                    background: #fff;
+                }
+            }
+        }
+        .NewsButton{
+            color: #fff;
+            padding: 10px 15px;
+            font-size:16;
+            &:hover {
+                color: #7c5ac2;
+                background: #fff;
+            }
+        }
+        .MenuCategory{
+           
+            .category_items{
+                padding: 10px;
+                color: #7c5ac2;
+                background: #fff;
+                
+            }
+        }
+    }
+}

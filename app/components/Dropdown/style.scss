@@ -1,0 +1,22 @@
+.dropDown {
+    position: relative;
+    .dropDown_ul {
+        position: absolute;
+        width: 100%;
+        background: #fff;
+        z-index: 10;
+        border-radius: 5px;
+        margin-top: 1px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+        li {
+            padding: 8px 15px;
+            .dropDown_icon {
+                margin-right: 8px;
+            }
+            p {
+                font-weight: 500;
+                color: #38a9ff;
+            }
+        }
+    }
+}

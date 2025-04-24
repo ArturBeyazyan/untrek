@@ -1,0 +1,74 @@
+.navbar {
+    padding: 15px 0;
+    width: 100%;
+    background-color: #7c5ac2;
+    .navbar_container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1360px;
+        margin: 0 auto;
+        .navbar_logo {
+            width: calc(20% - 3px);
+            padding: 10px 0;
+            .navbar_logo-img {
+                width: 208px;
+            }
+        }
+        .navbar_filter_inp {
+            max-width: 450px;
+            position: relative;
+            background-color: #fff;
+            border-radius: 5px;
+            input {
+                width: 450px;
+                padding: 10px;
+            }
+        }
+        .navbar_filter_search {
+            padding: 5px;
+            svg {
+                float: right;
+                background: #38a9ff;
+                color: #fff;
+                font-size: 20px;
+                
+                border-radius: 5px;
+                line-height: 38px;
+                height: 41px;
+                width: 40px;
+                color: #fff;
+                
+            }
+        }
+        .navbar_filter_btn{
+            margin-left: 15px;
+            .navbar_filter_btn-button{
+                text-transform: uppercase;
+                border-radius: 5px;
+                color: #fff;
+                line-height: 1.1;
+                font-size: 14px;
+                border: 2px solid #edf2f6;
+                padding: 11px 20px;
+            }
+            
+        }
+        .navbar_filter_language{
+            display: flex;
+            gap: 20px;
+        }
+        .navbar_filter_profile{
+            .navbar_filter_profile_button{
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                i{
+                    margin-right: 5px;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}

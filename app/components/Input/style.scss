@@ -1,0 +1,26 @@
+@import '../../assets/style/variables.scss';
+
+.G-error-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $red-dark;
+    font-size: $font-size-20;
+}
+.G-left-icon,
+.G-right-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: $font-size-18;
+    transition: $transition;
+}
+.G-right-icon {
+    right: 10px;
+}
+
+.G-left-icon {
+    left: 10px;
+}

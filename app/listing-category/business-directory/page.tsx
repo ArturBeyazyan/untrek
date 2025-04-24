@@ -1,10 +1,8 @@
 "use client";
-
-import { Aside } from "./components";
 import { useRouter } from "next/router";
-import { businessdirectoryItem } from "./models/selectItems";
+import { businessdirectoryItem } from "../../models/selectItems";
  import { useSearchParams } from 'next/navigation';
-export default function Home() {
+export default function Business() {
  
 
   const router = useSearchParams();
@@ -13,7 +11,7 @@ export default function Home() {
   const selectedItems = businessdirectoryItem.filter(item => item.id === id)
   return (
     <div className="Home">
-      <Aside />
+      
       <div className="flex">
       {/* Sidebar */}
       <aside className="w-64 bg-gray-100 p-4">
