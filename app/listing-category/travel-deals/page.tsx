@@ -1,9 +1,10 @@
 import React from 'react'
 
-export const ListingCategoryy = () => {
+const ListingCategoryy = () => {
   return (
     <div>
       dlkmfewmfdslkfkfdsmmmmmmmmmmmm
     </div>
   )
 }
+export default ListingCategoryy
