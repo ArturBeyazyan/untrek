@@ -1,25 +1,22 @@
-'use client'
-import { AiOutlineDown } from "react-icons/ai"; 
-import { AiOutlineUp } from "react-icons/ai"; 
-
+'use client' 
 import { useState } from 'react';
-import { FaBriefcase, FaExchangeAlt, FaCalendarAlt, FaSuitcase, FaBuilding, FaPlane } from 'react-icons/fa';
 import Input from '../Input';
 import './style.scss';
+import CustomImage from "../Image";
 interface Option {
   label: string;
-  icon: React.ReactNode;
+  icon: string;
 }
 export default function DropdownWithIcons() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const options: Option[] = [
-    { label: "Բիզնեսների գրացուցակ", icon: <FaBriefcase /> },
-    { label: "Գնել/Վաճառել", icon: <FaExchangeAlt /> },
-    { label: "Միջոցառումներ", icon: <FaCalendarAlt /> },
-    { label: "Աշխատանքներ", icon: <FaSuitcase /> },
-    { label: "Անշարժ գույք", icon: <FaBuilding /> },
-    { label: "Ճամփորդական առաջարկներ", icon: <FaPlane /> },
+    { label: "Բիզնեսների գրացուցակ", icon:'search' },
+    { label: "Գնել/Վաճառել", icon:'search' },
+    { label: "Միջոցառումներ",icon:'search' },
+    { label: "Աշխատանքներ", icon:'addUser' },
+    { label: "Անշարժ գույք", icon:'addUser' },
+    { label: "Ճամփորդական առաջարկներ", icon:'search' },
   ];
 
   const filteredOptions = options.filter(option =>
@@ -29,7 +26,6 @@ export default function DropdownWithIcons() {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-
   return (
     <div className="dropDown">
       <Input 
@@ -38,7 +34,7 @@ export default function DropdownWithIcons() {
       value={searchTerm}
       onFocus={toggleDropdown}
       onKeyDown={toggleDropdown}
-      rightIcon={  !isOpen ?  <AiOutlineDown />: <AiOutlineUp />}
+      rightIcon={ !isOpen ? 'dropdown':  'dropdown'}
       onChange={(e) => setSearchTerm(e.target.value)}  />
       {isOpen && (
         <ul className="dropDown_ul">
@@ -51,7 +47,7 @@ export default function DropdownWithIcons() {
                   setSearchTerm(option.label);
                   setIsOpen(false);
                 }}>
-                <span className="dropDown_icon">{option.icon}</span>
+                 <CustomImage iconName={option.icon}/>
                 <p>
                   {option.label}
                 </p>

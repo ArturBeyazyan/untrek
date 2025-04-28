@@ -1,3 +1,4 @@
+import CustomImage from '../Image';
 import './style.scss'
 import React from "react";
 
@@ -15,8 +16,8 @@ export interface InputProps {
     onClick? : (e: React.MouseEvent<HTMLInputElement>) => void;
     onClickIcon?(): void,
     disabled? : boolean;
-    leftIcon?: React.ReactNode,
-    rightIcon?: React.ReactNode,
+    leftIcon?: string,
+    rightIcon?: string,
     required? : boolean;
     error?: boolean,
     errorText?: string,
@@ -56,27 +57,38 @@ const CustomInput : React.FC < InputProps > = ({
     }
     function setIconsInput() {
       if (leftIcon) {
-        return <span onClick={onClickIcon} className={`G-left-icon ${leftIcon}`}/>
+        return<>
+         <span onClick={onClickIcon} className={`G-left-icon ${leftIcon}`}>
+            <CustomImage iconName={leftIcon}/>
+         </span>
+          </>
       }
       if (leftIcon && error) {
         return <>
-          <span className={`G-left-icon ${leftIcon}`}/>
+          <span className={`G-left-icon ${leftIcon}`}>
+            <CustomImage iconName={leftIcon}/>
+          </span>
           <span className='G-error-icon icon-warning'/></>
       }
       if (rightIcon && error) {
         return <>
-          <span className={`G-right-icon ${rightIcon}`}/>
+          <span className={`G-right-icon ${rightIcon}`}>
+          <CustomImage iconName={rightIcon}/>
+          </span>
           <span className='G-error-icon icon-warning'/></>
       }
       if (rightIcon) {
-        return <span onClick={onClickIcon} className={`G-right-icon ${rightIcon}`}/>
+        return <>
+        <span onClick={onClickIcon} className={`G-right-icon ${rightIcon}`}>
+            <CustomImage iconName={rightIcon}/>
+        </span>
+        </>
       }
     }
     return (
         <div className={`${formStyle}` }>
             {setIconsInput()}
-            <i className={`${iconStyle}`}></i> 
-            {leftIcon && <span className="G-left-icon">{leftIcon}</span>}
+            {leftIcon && <CustomImage iconName={iconStyle}/>}
             <input
                 type={type}
                 placeholder={placeholder}
@@ -92,8 +104,7 @@ const CustomInput : React.FC < InputProps > = ({
                 required={required}
                 className={`${Style}`}
             />
-            <i className={`${iconStyle}`}></i> 
-            {rightIcon && <span className="G-right-icon">{rightIcon}</span>}
+            {rightIcon && <CustomImage iconName={iconStyle}/>}
         </div>
     );
 };

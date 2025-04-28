@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { CategorisedMenu } from "../../models/selectItems";
+import { CustomButton } from "../Button";
 interface GroupedDropdownProps {
     title: string;
     menu: CategorisedMenu[];
@@ -13,7 +14,7 @@ interface GroupedDropdownProps {
     onMouseLeave? : (event: React.MouseEvent<HTMLDivElement>) => void;
     onMouseEnter? : (event: React.MouseEvent<HTMLDivElement>) => void;
 }
-const CustomGroupedDropdown: React.FC<GroupedDropdownProps> = ({ title,icon,iconClass,styleItem,styleButton,styleMenu,styleMenuCategory, menu,onMouseEnter,onMouseLeave }) => {
+export const CustomGroupedDropdown: React.FC<GroupedDropdownProps> = ({ title,icon,iconClass,styleItem,styleButton,styleMenu,styleMenuCategory, menu,onMouseEnter,onMouseLeave }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleMouseEnter: React.MouseEventHandler<HTMLDivElement> = (e) => {
     setIsOpen(true);
@@ -27,11 +28,11 @@ const CustomGroupedDropdown: React.FC<GroupedDropdownProps> = ({ title,icon,icon
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
     >
-      <button className={`${styleButton}`} >
-        {title}
-        {icon && <i className={icon || iconClass  }></i>}
-      </button>
-      {isOpen && (
+      <CustomButton
+        title={title}
+        className={`${styleButton}`}
+        iconRight={icon}/>
+        {isOpen && (
         <div className={`${styleMenu}`}>
           {menu.map((section) => (
             <div key={section.category} 
@@ -53,5 +54,3 @@ const CustomGroupedDropdown: React.FC<GroupedDropdownProps> = ({ title,icon,icon
     </div>
   );
 };
-
-export default CustomGroupedDropdown;

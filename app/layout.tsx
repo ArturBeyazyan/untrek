@@ -1,7 +1,6 @@
 'use client'
 import { Navbar, NavSelect } from "./components";
 import "./globals.css";
-
 export default function RootLayout({children} : Readonly < {
     children: React.ReactNode;
 } >) {

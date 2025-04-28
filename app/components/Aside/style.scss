@@ -12,5 +12,26 @@
         background: #38a9ff;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
+        cursor: pointer;
+        &:hover{
+            background: #7c5ac2;
+            color: #fff;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .custom_icon {
+                i {
+                    margin-right: 15px;
+                    font-size: 21px;
+                }
+            }
+            span {
+                color: #fff;
+                font-size: 14px;
+                // font-family: 'Roboto Medium';
+            }
+        }
     }
 }

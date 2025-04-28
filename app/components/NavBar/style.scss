@@ -1,74 +1,98 @@
+@import '../../assets/style/mixin.scss';
 .navbar {
     padding: 15px 0;
     width: 100%;
     background-color: #7c5ac2;
+
     .navbar_container {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+       justify-content: space-around;
         max-width: 1360px;
         margin: 0 auto;
         .navbar_logo {
-            width: calc(20% - 3px);
+            // width: calc(20% - 3px);
             padding: 10px 0;
+            cursor: pointer;
             .navbar_logo-img {
                 width: 208px;
             }
-        }
-        .navbar_filter_inp {
-            max-width: 450px;
-            position: relative;
-            background-color: #fff;
-            border-radius: 5px;
-            input {
-                width: 450px;
-                padding: 10px;
+            @include screen-max-width-1359 {
+                width: calc(15% - 3px);
+                padding: 20px 30px 0 0;
             }
         }
-        .navbar_filter_search {
-            padding: 5px;
-            svg {
-                float: right;
-                background: #38a9ff;
-                color: #fff;
-                font-size: 20px;
-                
-                border-radius: 5px;
-                line-height: 38px;
-                height: 41px;
-                width: 40px;
-                color: #fff;
-                
-            }
-        }
-        .navbar_filter_btn{
-            margin-left: 15px;
-            .navbar_filter_btn-button{
-                text-transform: uppercase;
-                border-radius: 5px;
-                color: #fff;
-                line-height: 1.1;
-                font-size: 14px;
-                border: 2px solid #edf2f6;
-                padding: 11px 20px;
-            }
-            
-        }
-        .navbar_filter_language{
+        .navbar_filter_input {
             display: flex;
-            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            .navbar_filter_inp {
+                max-width: 450px;
+                position: relative;
+                background-color: #fff;
+                border-radius: 5px;
+                @include screen-max-width-1359 {
+                    width: 340px;
+
+                }
+                input {
+                    border: none;
+                    width: 450px;
+                    padding: 10px;
+                }
+            }
+            .navbar_filter_search {
+                padding: 5px;
+                .custom_icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: #38a9ff;
+                    color: #fff;
+                    font-size: 20px;
+                    border-radius: 5px;
+                    line-height: 38px;
+                    height: 41px;
+                    width: 40px;
+                    color: #fff;
+                }
+            }
+            .navbar_filter_btn {
+                margin-left: 15px;
+                .navbar_filter_btn-button {
+                    text-transform: uppercase;
+                    border-radius: 5px;
+                    color: #fff;
+                    line-height: 1.1;
+                    font-size: 14px;
+                    border: 2px solid #edf2f6;
+                    padding: 11px 20px;
+                }
+
+            }
         }
-        .navbar_filter_profile{
-            .navbar_filter_profile_button{
-                color: #fff;
+
+        .navbar_filter_list {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .navbar_filter_language {
+                margin-right: 25px;
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                i{
-                    margin-right: 5px;
-                    font-size: 25px;
+                gap: 20px;
+            }
+            .navbar_filter_profile {
+                .navbar_filter_profile_button {
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    i {
+                        margin-right: 5px;
+                        font-size: 25px;
+                    }
                 }
             }
         }
+
     }
 }

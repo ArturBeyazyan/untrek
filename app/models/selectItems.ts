@@ -111,6 +111,7 @@ export const jobsItem: MenuItem[] = [
   { id:"Trucking", label:"Trucking",path: "jobs"},
   { id:"Work-from-Home", label: "Work from Home",path: "jobs"},
 ]
+export const getJobPath = (id: string) => `/jobs/${id}`;
 export const BuySellItem: CategorisedMenu[] = [
   {
     category: "Electronics & Media",

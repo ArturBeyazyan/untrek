@@ -15,7 +15,7 @@ interface DropdownMenuProps {
   onMouseLeave? : (event: React.MouseEvent<HTMLDivElement>) => void;
   onMouseEnter? : (event: React.MouseEvent<HTMLDivElement>) => void;
 }
-const CustomMultiselect: React.FC<DropdownMenuProps> = ({ items,title,icon,handleClick,iconClass,styleMenu,styleButton,styleItem,onMouseLeave,onMouseEnter }) => {
+export const CustomMultiselect: React.FC<DropdownMenuProps> = ({ items,title,icon,handleClick,iconClass,styleMenu,styleButton,styleItem,onMouseLeave,onMouseEnter }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const handleMouseEnter: React.MouseEventHandler<HTMLDivElement> = (e) => {
     setIsOpen(true);
@@ -30,7 +30,8 @@ const CustomMultiselect: React.FC<DropdownMenuProps> = ({ items,title,icon,handl
         <CustomButton 
           title={title}
           className={`"dropdown-button" ${styleButton}`}
-          icon={icon} onClick={handleClick}/>
+          iconRight={icon}
+          onClick={handleClick}/>
       {isOpen && (
         <div className={`"dropdown-menu" ${styleMenu} `}>
           {items.map((item) => (
@@ -43,7 +44,6 @@ const CustomMultiselect: React.FC<DropdownMenuProps> = ({ items,title,icon,handl
     </div>
   );
 };
-export default CustomMultiselect;
 
 
 // const CustomMultiselect = () => {
